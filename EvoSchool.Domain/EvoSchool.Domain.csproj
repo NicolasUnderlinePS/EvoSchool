@@ -41,7 +41,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Aluno.cs" />
+    <Compile Include="Entities\Matricula.cs" />
+    <Compile Include="Entities\Turma.cs" />
+    <Compile Include="Exceptions\DefaultException.cs" />
+    <Compile Include="Interfaces\Repositories\IAlunoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IMatriculaRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IRelatorioRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ITurmaRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EvoSchool.Service\EvoSchool.Service.csproj">
+      <Project>{448666B5-4BCD-4A16-823A-29B5B2D7902D}</Project>
+      <Name>EvoSchool.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
