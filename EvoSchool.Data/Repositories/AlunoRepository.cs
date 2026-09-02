@@ -1,7 +1,7 @@
 ﻿using Dapper;
+using EvoSchool.Domain.Commons;
 using EvoSchool.Domain.Entities;
 using EvoSchool.Domain.Interfaces.Repositories;
-using EvoSchool.Service.DTOs.Responses;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -72,7 +72,7 @@ namespace EvoSchool.Data.Repositories
             }
         }
 
-        public async Task<PaginationDefaultResponse<Aluno>> GetListAsync(string nome, int pagina, int tamanhoPagina)
+        public async Task<PaginationModel<Aluno>> GetListAsync(string nome, int pagina, int tamanhoPagina)
         {
             int paginaAtual = pagina < 1 ? 1 : pagina;
             int tamanho = tamanhoPagina < 1 ? 10 : tamanhoPagina;
@@ -106,7 +106,7 @@ namespace EvoSchool.Data.Repositories
                 int totalItens = await multi.ReadSingleAsync<int>();
                 List<Aluno> itens = (await multi.ReadAsync<Aluno>()).ToList();
 
-                return new PaginationDefaultResponse<Aluno>(itens, totalItens, paginaAtual, tamanho);
+                return new PaginationModel<Aluno>(itens, totalItens, paginaAtual, tamanho);
             }
         }
     }

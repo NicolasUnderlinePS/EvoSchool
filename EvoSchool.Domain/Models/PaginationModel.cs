@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
-namespace EvoSchool.Service.DTOs.Responses
+namespace EvoSchool.Domain.Commons
 {
-    public class PaginationDefaultResponse<T>
+    public class PaginationModel<T>
     {
         public List<T> Itens { get; set; } = new List<T>();
         public int PaginaAtual { get; set; }
@@ -12,9 +11,9 @@ namespace EvoSchool.Service.DTOs.Responses
         public int TotalItens { get; set; }
         public int TamanhoPagina { get; set; }
 
-        public PaginationDefaultResponse() { }
+        public PaginationModel() { }
 
-        public PaginationDefaultResponse(List<T> itens, int totalItens, int paginaAtual, int tamanhoPagina)
+        public PaginationModel(List<T> itens, int totalItens, int paginaAtual, int tamanhoPagina)
         {
             Itens = itens;
             TotalItens = totalItens;

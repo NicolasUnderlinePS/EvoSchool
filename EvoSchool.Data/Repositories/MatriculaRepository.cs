@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace EvoSchool.Data.Repositories
 {
-    internal class MatriculaRepository : _BaseRepository, IMatriculaRepository
+    public class MatriculaRepository : _BaseRepository, IMatriculaRepository
     {
         public MatriculaRepository(string connectionString) : base(connectionString) { }
 

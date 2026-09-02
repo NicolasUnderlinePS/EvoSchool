@@ -41,9 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DTOs\Responses\AlunosPorTurmaResponse.cs" />
-    <Compile Include="DTOs\Responses\PaginationDefaultResponse.cs" />
+    <Compile Include="DTOs\Requests\InsertAlunoRequest.cs" />
+    <Compile Include="DTOs\Requests\UpdateAlunoRequest.cs" />
+    <Compile Include="DTOs\Responses\AlunoResponse.cs" />
+    <Compile Include="DTOs\Responses\AlunosTurmaResponse.cs" />
+    <Compile Include="Interfaces\Services\IAlunoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AlunoService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EvoSchool.Domain\EvoSchool.Domain.csproj">
+      <Project>{F04AD269-117B-4D30-9581-98BCE73C5FDA}</Project>
+      <Name>EvoSchool.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EvoSchool.Data.Repositories
 {
-    internal class TurmaRepository : _BaseRepository, ITurmaRepository
+    public class TurmaRepository : _BaseRepository, ITurmaRepository
     {
         public TurmaRepository(string connectionString) : base(connectionString) { }
 

@@ -1,6 +1,6 @@
 ﻿using Dapper;
 using EvoSchool.Domain.Interfaces.Repositories;
-using EvoSchool.Service.DTOs.Responses;
+using EvoSchool.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace EvoSchool.Data.Repositories
 {
-    internal class RelatorioRepository : _BaseRepository, IRelatorioRepository
+    public class RelatorioRepository : _BaseRepository, IRelatorioRepository
     {
         public RelatorioRepository(string connectionString) : base(connectionString) { }
 
-        public async Task<List<AlunosPorTurmaResponse>> ListStudentsPerClassAsync()
+        public async Task<List<AlunosTurmaModel>> ListStudentsPerClassAsync()
         {
             const string sql = @"
                 SELECT 
@@ -29,7 +29,7 @@ namespace EvoSchool.Data.Repositories
 
             using (var connection = CreateConnection())
             {
-                return (await connection.QueryAsync<AlunosPorTurmaResponse>(sql)).ToList();
+                return (await connection.QueryAsync<AlunosTurmaModel>(sql)).ToList();
             }
         }
     }

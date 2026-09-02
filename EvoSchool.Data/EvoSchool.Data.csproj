@@ -75,7 +75,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configurations\DataConfigsRegistration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AlunoRepository.cs" />
     <Compile Include="Repositories\MatriculaRepository.cs" />
@@ -87,10 +86,6 @@
     <ProjectReference Include="..\EvoSchool.Domain\EvoSchool.Domain.csproj">
       <Project>{F04AD269-117B-4D30-9581-98BCE73C5FDA}</Project>
       <Name>EvoSchool.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EvoSchool.Service\EvoSchool.Service.csproj">
-      <Project>{448666B5-4BCD-4A16-823A-29B5B2D7902D}</Project>
-      <Name>EvoSchool.Service</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
