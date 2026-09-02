@@ -23,19 +23,19 @@ namespace EvoSchool.Service.Services
             List<Turma> turmas = await _turmaRepository.ListAsync();
 
             if (turmas == null || !turmas.Any())
-                throw new NotFoundException("Nenhuma turma foi encontrada.");
+                 throw new NotFoundException("Nenhuma turma foi encontrada.");
 
             return turmas.Select(MapToResponse).ToList();
         }
 
-        private static TurmaResponse MapToResponse(Turma turma)
+        private static TurmaResponse MapToResponse(Turma entity)
         {
-            if (turma == null) return null;
+            if (entity == null) return null;
 
             return new TurmaResponse
             {
-                Nome = turma.Nome,
-                VagasDisponiveis = turma.VagasDisponiveis
+                Nome = entity.Nome,
+                VagasDisponiveis = entity.VagasDisponiveis
             };
         }
     }

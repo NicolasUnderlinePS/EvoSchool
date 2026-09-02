@@ -20,8 +20,7 @@ namespace EvoSchool.Api.Controllers
         [Route("")]
         public async Task<IHttpActionResult> Get()
         {
-            List<TurmaResponse> result = await _turmaService.GetListAsync();
-            return Ok(result);
+            return Ok(await _turmaService.GetListAsync());
         }
 
     }

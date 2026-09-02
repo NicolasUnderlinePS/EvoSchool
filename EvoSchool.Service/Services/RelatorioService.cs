@@ -1,8 +1,10 @@
-﻿using EvoSchool.Domain.Interfaces.Repositories;
+﻿using EvoSchool.Domain.Exceptions;
+using EvoSchool.Domain.Interfaces.Repositories;
 using EvoSchool.Domain.Models;
 using EvoSchool.Service.DTOs.Responses;
 using EvoSchool.Service.Interfaces.Services;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace EvoSchool.Service.Services
@@ -20,8 +22,12 @@ namespace EvoSchool.Service.Services
         {
             List<AlunosTurmaModel> listReturned = await _relatorioRepository.ListStudentsPerClassAsync();
 
+            if (listReturned == null || !listReturned.Any())
+                throw new NotFoundException("Nenhum dado encontrado para o relatório de alunos por turma.");
+
             return listReturned?.ConvertAll(MapToResponse);
         }
+
 
         private static AlunosTurmaResponse MapToResponse(AlunosTurmaModel model)
         {

@@ -21,8 +21,7 @@ namespace EvoSchool.Api.Controllers
         [Route("alunos-por-turma")]
         public async Task<IHttpActionResult> GetStudentsPerClass()
         {
-            List<AlunosTurmaResponse> resultado = await _relatorioService.ListStudentsPerClassAsync();
-            return Ok(resultado);
+            return Ok(await _relatorioService.ListStudentsPerClassAsync());
         }
     }
 }

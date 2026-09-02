@@ -1,7 +1,6 @@
 ﻿using EvoSchool.Service.DTOs.Requests;
 using EvoSchool.Service.DTOs.Responses;
 using EvoSchool.Service.Interfaces.Services;
-using System;
 using System.Net;
 using System.Threading.Tasks;
 using System.Web.Http;
@@ -22,35 +21,39 @@ namespace EvoSchool.Api.Controllers
         [Route("")]
         public async Task<IHttpActionResult> Get([FromUri] string nome = null, [FromUri] int pagina = 1, [FromUri] int tamanhoPagina = 10)
         {
-            var resultado = await _alunoService.GetListAsync(nome, pagina, tamanhoPagina);
-            return Ok(resultado);
+            return Ok(await _alunoService.GetListAsync(nome, pagina, tamanhoPagina));
         }
 
         [HttpGet]
         [Route("{id:int}", Name = "GetAlunoById")]
         public async Task<IHttpActionResult> GetById(int id)
         {
-            var aluno = await _alunoService.GetByIdAsync(id);
-            return Ok(aluno);
+            return Ok(await _alunoService.GetByIdAsync(id));
         }
 
         [HttpPost]
         [Route("")]
         public async Task<IHttpActionResult> Post([FromBody] InsertAlunoRequest request)
         {
-            if (!ModelState.IsValid)
+            if (request == null)
+                return BadRequest("O corpo da requisição não pode ser nulo.");
+
+            if (ModelState.IsValid == false)
                 return BadRequest(ModelState);
 
-            AlunoResponse novoAluno = await _alunoService.AddAsync(request);
+            AlunoResponse newStudent = await _alunoService.AddAsync(request);
 
-            return CreatedAtRoute("GetAlunoById", new { id = novoAluno.Id }, novoAluno);
+            return CreatedAtRoute("GetAlunoById", new { id = newStudent.Id }, newStudent);
         }
 
         [HttpPut]
         [Route("{id:int}")]
         public async Task<IHttpActionResult> Put(int id, [FromBody] UpdateAlunoRequest request)
         {
-            if (!ModelState.IsValid)
+            if (request == null)
+                return BadRequest("O corpo da requisição não pode ser nulo.");
+
+            if (ModelState.IsValid == false)
                 return BadRequest(ModelState);
 
             await _alunoService.UpdateAsync(id, request);

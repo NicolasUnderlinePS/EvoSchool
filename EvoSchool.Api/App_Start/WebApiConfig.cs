@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EvoSchool.Api.Filters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -9,10 +10,9 @@ namespace EvoSchool.Api
     {
         public static void Register(HttpConfiguration config)
         {
-            // Configuração e serviços de API Web
-
-            // Rotas de API Web
             config.MapHttpAttributeRoutes();
+
+            config.Filters.Add(new ApiExceptionFilterAttribute());
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",

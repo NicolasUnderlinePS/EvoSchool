@@ -17,12 +17,14 @@ namespace EvoSchool.Service.Services
         private readonly IMatriculaRepository _matriculaRepository;
         private readonly IAlunoRepository _alunoRepository;
         private readonly ITurmaRepository _turmaRepository;
+        private readonly string _connectionString;
 
         public MatriculaService(IMatriculaRepository matriculaRepository, IAlunoRepository alunoRepository, ITurmaRepository turmaRepository)
         {
             _matriculaRepository = matriculaRepository ?? throw new ArgumentNullException(nameof(matriculaRepository));
             _alunoRepository = alunoRepository ?? throw new ArgumentNullException(nameof(alunoRepository));
             _turmaRepository = turmaRepository ?? throw new ArgumentNullException(nameof(turmaRepository));
+            _connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"]?.ConnectionString ?? throw new InvalidOperationException("A connection string 'DefaultConnection' não foi configurada no Web.config.");
         }
 
         public async Task<MatriculaResponse> AddAsync(InsertMatriculaRequest request)
