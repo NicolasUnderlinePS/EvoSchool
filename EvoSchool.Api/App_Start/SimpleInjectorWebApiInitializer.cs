@@ -38,8 +38,14 @@ namespace EvoSchool.Api.App_Start
 
             container.Register<IAlunoService, AlunoService>(Lifestyle.Scoped);           
             container.Register<ITurmaService, TurmaService>(Lifestyle.Scoped);           
-            container.Register<IMatriculaService, MatriculaService>(Lifestyle.Scoped);           
             container.Register<IRelatorioService, RelatorioService>(Lifestyle.Scoped);           
+            //container.Register<IMatriculaService, MatriculaService>(Lifestyle.Scoped);
+            container.Register<IMatriculaService>(() => new MatriculaService(
+                container.GetInstance<IMatriculaRepository>(),
+                container.GetInstance<IAlunoRepository>(),
+                container.GetInstance<ITurmaRepository>(),
+                connectionString
+            ), Lifestyle.Scoped);
         }
     }
 }

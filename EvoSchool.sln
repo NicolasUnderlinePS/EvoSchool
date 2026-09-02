@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvoSchool.Data", "EvoSchool
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvoSchool.Api", "EvoSchool.Api\EvoSchool.Api.csproj", "{5157249F-DC3A-4856-8143-CCC6BBB5D772}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvoSchool.Test", "EvoSchool.Test\EvoSchool.Test.csproj", "{74FF76F1-437D-4D84-9E1C-DAFF76362BDA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{5157249F-DC3A-4856-8143-CCC6BBB5D772}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5157249F-DC3A-4856-8143-CCC6BBB5D772}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5157249F-DC3A-4856-8143-CCC6BBB5D772}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74FF76F1-437D-4D84-9E1C-DAFF76362BDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74FF76F1-437D-4D84-9E1C-DAFF76362BDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74FF76F1-437D-4D84-9E1C-DAFF76362BDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74FF76F1-437D-4D84-9E1C-DAFF76362BDA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
