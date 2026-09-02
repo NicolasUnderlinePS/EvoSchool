@@ -12,20 +12,19 @@ namespace EvoSchool.Data.Repositories
     {
         public TurmaRepository(string connectionString) : base(connectionString) { }
 
-        public async Task<Turma> GetByIdAsync(int id)
+        public async Task<List<Turma>> ListAsync()
         {
             const string sql = @"
                 SELECT 
                     Id, 
                     Nome, 
                     VagasDisponiveis 
-                FROM Turma 
-                WHERE Id = @Id;
+                FROM Turma;
             ";
 
             using (var connection = CreateConnection())
             {
-                return await connection.QueryFirstOrDefaultAsync<Turma>(sql, new { Id = id });
+                return (await connection.QueryAsync<Turma>(sql)).ToList();
             }
         }
 

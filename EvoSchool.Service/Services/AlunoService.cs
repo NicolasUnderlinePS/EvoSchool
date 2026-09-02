@@ -32,7 +32,10 @@ namespace EvoSchool.Service.Services
             Aluno aluno = new Aluno
             {
                 Nome = request.Nome.Trim(),
-                Ativo = true
+                Ativo = true,
+                Email = request.Email.Trim(),
+                DataNascimento = request.DataNascimento,
+                DataCadastro = DateTime.Now
             };
 
             aluno.Id = await _alunoRepository.AddAsync(aluno);
@@ -86,6 +89,7 @@ namespace EvoSchool.Service.Services
                 throw new NotFoundException($"Aluno com ID {id} não foi encontrado para atualização.");
 
             alunoExistente.Nome = request.Nome.Trim();
+            alunoExistente.Email = request.Email.Trim();
             alunoExistente.Ativo = request.Ativo;
 
             await _alunoRepository.UpdateAsync(alunoExistente);
@@ -111,7 +115,10 @@ namespace EvoSchool.Service.Services
             {
                 Id = aluno.Id,
                 Nome = aluno.Nome,
-                Ativo = aluno.Ativo
+                Email = aluno.Email,
+                Ativo = aluno.Ativo ? "Ativo" : "Inativo",
+                DataCadastro = aluno.DataCadastro.ToString("dd-MM-yyyy"),
+                DataNascimento = aluno.DataNascimento.ToString("dd-MM-yyyy")
             };
         }
     }

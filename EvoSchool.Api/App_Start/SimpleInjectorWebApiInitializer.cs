@@ -37,6 +37,7 @@ namespace EvoSchool.Api.App_Start
             container.Register<IRelatorioRepository>(() => new RelatorioRepository(connectionString), Lifestyle.Scoped);
 
             container.Register<IAlunoService, AlunoService>(Lifestyle.Scoped);           
+            container.Register<ITurmaService, TurmaService>(Lifestyle.Scoped);           
         }
     }
 }

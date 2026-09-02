@@ -9,13 +9,13 @@ using System.Web.Http;
 namespace EvoSchool.Api.Controllers
 {
     [RoutePrefix("api/alunos")]
-    public class AlunoController : ApiController
+    public class AlunosController : ApiController
     {
         private readonly IAlunoService _alunoService;
 
-        public AlunoController(IAlunoService alunoService)
+        public AlunosController(IAlunoService alunoService)
         {
-            _alunoService = alunoService ?? throw new ArgumentNullException(nameof(alunoService));
+            _alunoService = alunoService;
         }
 
         [HttpGet]
