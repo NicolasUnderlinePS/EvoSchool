@@ -38,6 +38,7 @@ namespace EvoSchool.Api.App_Start
 
             container.Register<IAlunoService, AlunoService>(Lifestyle.Scoped);           
             container.Register<ITurmaService, TurmaService>(Lifestyle.Scoped);           
+            container.Register<IMatriculaService, MatriculaService>(Lifestyle.Scoped);           
         }
     }
 }

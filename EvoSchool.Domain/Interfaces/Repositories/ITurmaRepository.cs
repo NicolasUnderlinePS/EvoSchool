@@ -8,6 +8,7 @@ namespace EvoSchool.Domain.Interfaces.Repositories
     {
         Task<List<Turma>> ListOpenClassVacanciesAsync();
         Task<List<Turma>> ListAsync();
+        Task<Turma> GetByIdAsync(int turmaId);
 
     }
 }

@@ -28,6 +28,22 @@ namespace EvoSchool.Data.Repositories
             }
         }
 
+        public async Task<Turma> GetByIdAsync(int id)
+        {
+            const string sql = @"
+                SELECT 
+                    Id, 
+                    Nome, 
+                    VagasDisponiveis 
+                FROM Turma WHERE Id = @Id;
+            ";
+
+            using (var connection = CreateConnection())
+            {
+                return (await connection.QueryAsync<Turma>(sql, new { Id = id })).FirstOrDefault();
+            }
+        }
+
         public async Task<List<Turma>> ListOpenClassVacanciesAsync()
         {
             const string sql = @"

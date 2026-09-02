@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,14 +43,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTOs\Requests\InsertAlunoRequest.cs" />
+    <Compile Include="DTOs\Requests\InsertMatriculaRequest.cs" />
     <Compile Include="DTOs\Requests\UpdateAlunoRequest.cs" />
     <Compile Include="DTOs\Responses\AlunoResponse.cs" />
     <Compile Include="DTOs\Responses\AlunosTurmaResponse.cs" />
+    <Compile Include="DTOs\Responses\MatriculaResponse.cs" />
     <Compile Include="DTOs\Responses\TurmaResponse.cs" />
     <Compile Include="Interfaces\Services\IAlunoService.cs" />
+    <Compile Include="Interfaces\Services\IMatriculaService.cs" />
     <Compile Include="Interfaces\Services\ITurmaService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AlunoService.cs" />
+    <Compile Include="Services\MatriculaService.cs" />
     <Compile Include="Services\TurmaService.cs" />
   </ItemGroup>
   <ItemGroup>

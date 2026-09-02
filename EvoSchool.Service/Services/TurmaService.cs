@@ -1,13 +1,10 @@
-﻿using EvoSchool.Domain.Commons;
-using EvoSchool.Domain.Entities;
+﻿using EvoSchool.Domain.Entities;
 using EvoSchool.Domain.Exceptions;
 using EvoSchool.Domain.Interfaces.Repositories;
 using EvoSchool.Service.DTOs.Responses;
 using EvoSchool.Service.Interfaces.Services;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace EvoSchool.Service.Services

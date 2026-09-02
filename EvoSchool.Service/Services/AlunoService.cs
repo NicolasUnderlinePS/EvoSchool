@@ -117,8 +117,9 @@ namespace EvoSchool.Service.Services
                 Nome = aluno.Nome,
                 Email = aluno.Email,
                 Ativo = aluno.Ativo ? "Ativo" : "Inativo",
-                DataCadastro = aluno.DataCadastro.ToString("dd-MM-yyyy"),
-                DataNascimento = aluno.DataNascimento.ToString("dd-MM-yyyy")
+                DataCadastro = aluno.DataCadastro.ToString("yyyy-MM-dd"),
+                DataNascimento = aluno.DataNascimento.ToString("yyyy-MM-dd")
+
             };
         }
     }
