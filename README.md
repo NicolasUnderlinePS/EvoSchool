@@ -1,0 +1,4 @@
+- Criar o banco de dados com o arquivo enviado para essa avaliação
+- Se for necessário alterar a string de conexão (DefaultConnection), localize ela no arquivo Web.config dentro EvoSchool.Api
+- Ao iniciar o EvoSchool.Api, é possível ver os endpoint solicitados adicionando /Help no endereço base da aplicação
+- Além do projeto de EvoSchool.Test, também podemos acessar os end-points pelo Postman, Insomnia: {endereco_base_aplicacao}/api/alunos?Nome={none} 
